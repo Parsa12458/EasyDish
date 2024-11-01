@@ -33,5 +33,6 @@
 
   body {
     font-family: "LeagueSpartan", sans-serif;
+    @apply bg-background;
   }
 }
