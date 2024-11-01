@@ -1,5 +1,11 @@
+import Header from "./ui/Header";
+
 function App() {
-  return <div>Hello easy dish!</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
