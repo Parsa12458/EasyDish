@@ -1,4 +1,5 @@
 import Homepage from "./pages/Homepage";
+import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="overflow-x-hidden">
       <Header />
       <Homepage />
+      <Footer />
     </div>
   );
 }
