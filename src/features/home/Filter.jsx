@@ -15,7 +15,7 @@ function Filter({
           <select
             name={id}
             id={id}
-            className="w-32 appearance-none rounded-default bg-lightMint py-2.5 pl-4 pr-10 font-medium"
+            className="w-32 appearance-none rounded-default bg-lightMint py-2.5 pl-4 pr-10 font-medium focus:outline-none focus:ring focus:ring-primary"
           >
             {optionsArr.map((option, i) => (
               <option value={option.toLowerCase().split(" ").join("-")} key={i}>
@@ -44,7 +44,7 @@ function Filter({
           type="number"
           name={id}
           id={id}
-          className="w-24 rounded-default bg-lightMint py-2.5 pl-4 pr-4 font-medium"
+          className="w-24 rounded-default bg-lightMint py-2.5 pl-4 pr-4 font-medium focus:outline-none focus:ring focus:ring-primary"
           defaultValue={defaultValue}
         />
       </div>
