@@ -1,6 +1,8 @@
+import { convertMinutesToHours } from "../../helpers/helper";
+
 function Card({ data }) {
   const { title, image, readyInMinutes, servings, healthScore } = data;
-  console.log(data);
+
   return (
     <div className="w-[312px] cursor-pointer overflow-hidden rounded-default bg-lightMint drop-shadow-md transition-all duration-300 hover:scale-105 hover:drop-shadow-xl">
       <img src={image} alt={title} className="h-[231px] w-full" />
@@ -17,7 +19,7 @@ function Card({ data }) {
             />
             <span className="font-semibold text-primary">Ready Time: </span>
             <span className="font-semibold text-darkGreen">
-              {readyInMinutes} minutes
+              {convertMinutesToHours(readyInMinutes)}
             </span>
           </div>
           <div className="flex items-center justify-start gap-1">

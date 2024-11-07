@@ -3,12 +3,24 @@ import Card from "./Card";
 import { getRecipes } from "../../services/apiRecipes";
 import Error from "../../ui/Error";
 import CardSkeleton from "../../ui/CardSkeleton";
+import { useRecipes } from "../../context/RecipesContext";
+import { useEffect } from "react";
 
 function Cards() {
+  const { page, dispatch } = useRecipes();
+  // Fetch the data
   const { isLoading, data, error } = useQuery({
-    queryKey: ["recipes"],
-    queryFn: getRecipes,
+    queryKey: ["recipes", page],
+    queryFn: () => getRecipes(page),
   });
+
+  // Set total pages in context
+  useEffect(() => {
+    if (!data) return;
+    const itemsPerPage = 10;
+    const totalPages = Math.ceil(data.totalResults / itemsPerPage);
+    dispatch({ type: "setTotalPages", payload: totalPages });
+  }, [data, dispatch]);
 
   if (error) return <Error />;
 
