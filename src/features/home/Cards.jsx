@@ -4,14 +4,51 @@ import { getRecipes } from "../../services/apiRecipes";
 import Error from "../../ui/Error";
 import CardSkeleton from "../../ui/CardSkeleton";
 import { useRecipes } from "../../context/RecipesContext";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function Cards() {
-  const { page, dispatch } = useRecipes();
+  const {
+    page,
+    dispatch,
+    recipeType,
+    recipeCuisine,
+    diet,
+    sortBy,
+    sortDir,
+    servings,
+    maxReadyTime,
+  } = useRecipes();
+
+  const abortControllerRef = useRef();
+
   // Fetch the data
   const { isLoading, data, error } = useQuery({
-    queryKey: ["recipes", page],
-    queryFn: () => getRecipes(page),
+    queryKey: [
+      "recipes",
+      page,
+      recipeType,
+      recipeCuisine,
+      diet,
+      sortBy,
+      sortDir,
+      servings,
+      maxReadyTime,
+    ],
+    queryFn: () => {
+      if (abortControllerRef.current) abortControllerRef.current.abort();
+      abortControllerRef.current = new AbortController();
+      return getRecipes(
+        page,
+        recipeType,
+        recipeCuisine,
+        diet,
+        sortBy,
+        sortDir,
+        servings,
+        maxReadyTime,
+        abortControllerRef.current?.signal,
+      );
+    },
   });
 
   // Set total pages in context
@@ -33,6 +70,9 @@ function Cards() {
         : data?.results?.map((data) => (
             <Card data={data} isLoading={isLoading} key={data.id} />
           ))}
+      {data?.results?.length === 0 && (
+        <Error message="No results were found! 😵‍💫" />
+      )}
     </div>
   );
 }

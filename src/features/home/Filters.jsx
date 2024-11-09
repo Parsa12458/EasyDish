@@ -70,6 +70,13 @@ const sortByOptions = [
 
 const sortDirOptions = ["Ascending", "Descending"];
 
+const servingsOptions = ["All", ...Array.from({ length: 20 }, (_, i) => i + 1)];
+
+const maxReadyTimeOptions = [
+  "All",
+  ...Array.from({ length: 20 }, (_, i) => 10 * (i + 1)),
+];
+
 function Filters() {
   return (
     <div className="mt-6 flex flex-wrap items-end justify-center gap-8">
@@ -88,20 +95,10 @@ function Filters() {
       <Filter id="sortDir" optionsArr={sortDirOptions}>
         Sorting Direction
       </Filter>
-      <Filter
-        id="servings"
-        optionsArr={recipeTypeOptions}
-        type="number"
-        defaultValue={1}
-      >
+      <Filter id="servings" optionsArr={servingsOptions} type="number">
         Servings
       </Filter>
-      <Filter
-        id="maxReadyTime"
-        optionsArr={recipeTypeOptions}
-        type="number"
-        defaultValue={40}
-      >
+      <Filter id="maxReadyTime" optionsArr={maxReadyTimeOptions} type="number">
         Max Ready Time (minutes)
       </Filter>
     </div>

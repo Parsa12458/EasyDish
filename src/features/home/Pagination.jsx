@@ -4,7 +4,7 @@ import { scrollToTop } from "../../helpers/helper";
 function Pagination() {
   const { page, totalPages, dispatch } = useRecipes();
   const isFirstPage = page === 0;
-  const isLastPage = page === totalPages;
+  const isLastPage = page >= totalPages - 1;
 
   function handlePrevious() {
     dispatch({ type: "previousPage" });
@@ -36,8 +36,7 @@ function Pagination() {
         </button>
       </div>
       <span className="text-sm">
-        Total Pages: <span className="font-semibold">{totalPages + 1}</span>{" "}
-        Page
+        Total Pages: <span className="font-semibold">{totalPages}</span> Page
       </span>
     </div>
   );
