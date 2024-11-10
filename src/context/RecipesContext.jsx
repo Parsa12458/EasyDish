@@ -14,6 +14,8 @@ const initialState = {
   sortDir: "ascending",
   servings: "all",
   maxReadyTime: "all",
+  // Searching
+  searchQuery: "",
 };
 
 function reducer(state, action) {
@@ -40,6 +42,9 @@ function reducer(state, action) {
       return { ...state, servings: action.payload, page: 0 };
     case "updateMaxReadyTime":
       return { ...state, maxReadyTime: action.payload, page: 0 };
+    // Searching
+    case "setSearchQuery":
+      return { ...state, searchQuery: action.payload };
   }
 }
 
@@ -55,6 +60,7 @@ function RecipesProvider({ children }) {
       sortDir,
       servings,
       maxReadyTime,
+      searchQuery,
     },
     dispatch,
   ] = useReducer(reducer, initialState);
@@ -71,6 +77,7 @@ function RecipesProvider({ children }) {
         sortDir,
         servings,
         maxReadyTime,
+        searchQuery,
       }}
     >
       {children}

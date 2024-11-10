@@ -9,12 +9,13 @@ export async function getRecipes(
   sortDir,
   servings,
   maxReadyTime,
+  searchQuery,
   signal,
 ) {
   try {
     const offset = page * RESULTS_PER_PAGE;
     const res = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=b6caf6feb2104369afd8164623fe780b&addRecipeInformation=true&number=10&offset=${offset}${recipeType === "all" ? "" : `&type=${recipeType}`}${recipeCuisine === "all" ? "" : `&cuisine=${recipeCuisine}`}${diet === "all" ? "" : `&diet=${diet}`}${sortBy === "none" ? "" : `&sort=${sortBy}`}${sortDir === "ascending" ? "&sortDirection=asc" : "&sortDirection=desc"}${servings === "all" ? "" : `&minServings=${servings}&maxServings=${servings}`}${maxReadyTime === "all" ? "" : `&maxReadyTime=${maxReadyTime}`}`,
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=b6caf6feb2104369afd8164623fe780b&addRecipeInformation=true&number=${RESULTS_PER_PAGE}&offset=${offset}${recipeType === "all" ? "" : `&type=${recipeType}`}${recipeCuisine === "all" ? "" : `&cuisine=${recipeCuisine}`}${diet === "all" ? "" : `&diet=${diet}`}${sortBy === "none" ? "" : `&sort=${sortBy}`}${sortDir === "ascending" ? "&sortDirection=asc" : "&sortDirection=desc"}${servings === "all" ? "" : `&minServings=${servings}&maxServings=${servings}`}${maxReadyTime === "all" ? "" : `&maxReadyTime=${maxReadyTime}`}${searchQuery.length < 3 ? "" : `&query=${searchQuery}`}`,
       { signal },
     );
 

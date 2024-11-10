@@ -17,6 +17,7 @@ function Cards() {
     sortDir,
     servings,
     maxReadyTime,
+    searchQuery,
   } = useRecipes();
 
   const abortControllerRef = useRef();
@@ -33,6 +34,7 @@ function Cards() {
       sortDir,
       servings,
       maxReadyTime,
+      searchQuery.length < 3 ? "" : searchQuery,
     ],
     queryFn: () => {
       if (abortControllerRef.current) abortControllerRef.current.abort();
@@ -46,6 +48,7 @@ function Cards() {
         sortDir,
         servings,
         maxReadyTime,
+        searchQuery,
         abortControllerRef.current?.signal,
       );
     },
