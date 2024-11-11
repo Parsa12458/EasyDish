@@ -4,6 +4,7 @@ import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { RecipesProvider } from "./context/RecipesContext";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 const queryClient = new QueryClient();
 
@@ -11,12 +12,14 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <RecipesProvider>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <div className="overflow-x-hidden">
-          <Header />
-          <Homepage />
-          <Footer />
-        </div>
+        <DarkModeProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <div className="overflow-x-hidden dark:bg-backgroundDark">
+            <Header />
+            <Homepage />
+            <Footer />
+          </div>
+        </DarkModeProvider>
       </RecipesProvider>
     </QueryClientProvider>
   );

@@ -4,7 +4,7 @@ import Pagination from "../features/home/Pagination";
 
 function Homepage() {
   return (
-    <main className="mx-auto max-w-[1920px] bg-background pb-32">
+    <main className="mx-auto max-w-[1920px] bg-background pb-32 dark:bg-backgroundDark">
       <Filters />
       <Cards />
       <Pagination />

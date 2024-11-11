@@ -1,8 +1,16 @@
+import { useDarkMode } from "../context/DarkModeContext";
+
 function Logo() {
+  const { isDarkMode } = useDarkMode();
+
   return (
     <button>
       <img
-        src="/icons/light-mode-logo.svg"
+        src={
+          isDarkMode
+            ? "/icons/dark-mode-logo.svg"
+            : "/icons/light-mode-logo.svg"
+        }
         alt="Easy Dish Logo"
         className="w-44"
       />

@@ -2,11 +2,13 @@
 import daisyui from "daisyui";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "selector",
   theme: {
     colors: {
       primary: "#6B9080",
       darkGreen: "#364840",
       lightMint: "#EAF4F4",
+      darkMint: "#202B26",
       forestGreen: "#4B655A",
       black: "#000000",
       midGreen: "#7A9B8D",

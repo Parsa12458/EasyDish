@@ -5,7 +5,7 @@ import AccountButton from "./AccountButton";
 
 function Header() {
   return (
-    <header className="flex w-screen items-center justify-between bg-lightMint px-8 py-4">
+    <header className="dark:bg-darkMint flex w-screen items-center justify-between bg-lightMint px-8 py-4">
       <Logo />
       <Searchbox />
 

@@ -2,7 +2,7 @@ import Logo from "./Logo";
 
 function Footer() {
   return (
-    <footer className="flex w-screen items-center justify-between bg-lightMint px-8 py-5">
+    <footer className="flex w-screen items-center justify-between bg-lightMint px-8 py-5 dark:bg-darkMint">
       <Logo />
       <p className="max-w-56 text-sm font-semibold text-primary">
         &copy; EasyDish. All rights reserved. Created by{" "}

@@ -7,12 +7,12 @@ function Searchbox() {
   }
 
   return (
-    <form className="flex gap-4 overflow-hidden rounded-default bg-background py-1.5 pl-4 pr-2">
+    <form className="flex gap-4 overflow-hidden rounded-default bg-background py-1.5 pl-4 pr-2 dark:bg-backgroundDark">
       <img src="/icons/search-icon.svg" alt="Search icon" className="w-4" />
       <input
         type="text"
         placeholder="Search by recipe (min 3 charecter)"
-        className="w-64 bg-background font-medium text-oliveGreen placeholder:text-gray focus:outline-none"
+        className="w-64 bg-background font-medium text-oliveGreen placeholder:text-gray focus:outline-none dark:bg-backgroundDark dark:text-background"
         onChange={(e) => handleChange(e.target.value)}
       />
     </form>
