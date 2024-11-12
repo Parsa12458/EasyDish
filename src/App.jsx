@@ -5,6 +5,7 @@ import Header from "./ui/Header";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { RecipesProvider } from "./context/RecipesContext";
 import { DarkModeProvider } from "./context/DarkModeContext";
+import DetailPage from "./pages/DetailPage";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +17,8 @@ function App() {
           <ReactQueryDevtools initialIsOpen={false} />
           <div className="overflow-x-hidden dark:bg-backgroundDark">
             <Header />
-            <Homepage />
+            {/* <Homepage /> */}
+            <DetailPage />
             <Footer />
           </div>
         </DarkModeProvider>

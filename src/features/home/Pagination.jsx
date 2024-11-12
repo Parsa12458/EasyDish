@@ -16,8 +16,6 @@ function Pagination() {
     scrollToTop();
   }
 
-  // TODO: if possible prevent titles of cards to have like 4 lines
-
   return (
     <div className="mt-16 flex flex-col items-center justify-center gap-4">
       <div className="join">

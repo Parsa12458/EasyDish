@@ -7,7 +7,10 @@ function Searchbox() {
   }
 
   return (
-    <form className="flex gap-4 overflow-hidden rounded-default bg-background py-1.5 pl-4 pr-2 dark:bg-backgroundDark">
+    <form
+      className="flex gap-4 overflow-hidden rounded-default bg-background py-1.5 pl-4 pr-2 dark:bg-backgroundDark"
+      onSubmit={(e) => e.preventDefault()}
+    >
       <img src="/icons/search-icon.svg" alt="Search icon" className="w-4" />
       <input
         type="text"

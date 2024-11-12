@@ -4,7 +4,7 @@ function Card({ data }) {
   const { title, image, readyInMinutes, servings, healthScore } = data;
 
   return (
-    <div className="dark:bg-darkMint w-[312px] cursor-pointer overflow-hidden rounded-default bg-lightMint drop-shadow-md transition-all duration-300 hover:scale-105 hover:drop-shadow-xl">
+    <div className="w-[312px] cursor-pointer overflow-hidden rounded-default bg-lightMint drop-shadow-md transition-all duration-300 hover:scale-105 hover:drop-shadow-xl dark:bg-darkMint">
       <img src={image} alt={title} className="h-[231px] w-full" />
       <div className="mb-10 mt-7 px-7">
         <h3 className="text-xl font-bold leading-5 text-forestGreen dark:text-paleGreen">
