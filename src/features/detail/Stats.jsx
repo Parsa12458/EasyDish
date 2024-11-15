@@ -1,24 +1,32 @@
 import Stat from "./Stat";
 
-function Stats() {
+function Stats({
+  cookingMinutes,
+  preparationMinutes,
+  readyInMinutes,
+  servings,
+  healthScore,
+  calories,
+  caloriesUnit,
+}) {
   return (
     <div className="mx-auto grid grid-cols-3 gap-x-12 gap-y-5">
-      <Stat value={10} unit={"minutes"}>
+      <Stat value={preparationMinutes ?? "-"} unit={"minutes"}>
         Preparation Time
       </Stat>
-      <Stat value={35} unit={"minutes"}>
+      <Stat value={cookingMinutes ?? "-"} unit={"minutes"}>
         Cooking Time
       </Stat>
-      <Stat value={45} unit={"minutes"}>
+      <Stat value={readyInMinutes ?? "-"} unit={"minutes"}>
         Ready Time
       </Stat>
-      <Stat value={10} unit={"person"}>
+      <Stat value={servings ?? "-"} unit={"person"}>
         Servings
       </Stat>
-      <Stat value={100} unit={"percent"}>
+      <Stat value={healthScore ?? "-"} unit={"percent"}>
         Health Score
       </Stat>
-      <Stat value={137.6} unit={"kcal"}>
+      <Stat value={calories ?? "-"} unit={caloriesUnit || "----"}>
         Calories
       </Stat>
     </div>

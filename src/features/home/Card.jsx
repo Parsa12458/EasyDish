@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom";
 import { convertMinutesToHours } from "../../helpers/helper";
 
 function Card({ data }) {
-  const { title, image, readyInMinutes, servings, healthScore } = data;
+  const { id, title, image, readyInMinutes, servings, healthScore } = data;
 
   return (
-    <div className="w-[312px] cursor-pointer overflow-hidden rounded-default bg-lightMint drop-shadow-md transition-all duration-300 hover:scale-105 hover:drop-shadow-xl dark:bg-darkMint">
+    <Link
+      className="w-[312px] cursor-pointer overflow-hidden rounded-default bg-lightMint drop-shadow-md transition-all duration-300 hover:scale-105 hover:drop-shadow-xl dark:bg-darkMint"
+      to={`/${id}`}
+    >
       <img src={image} alt={title} className="h-[231px] w-full" />
       <div className="mb-10 mt-7 px-7">
         <h3 className="text-xl font-bold leading-5 text-forestGreen dark:text-paleGreen">
@@ -46,7 +50,7 @@ function Card({ data }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

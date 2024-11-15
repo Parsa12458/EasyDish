@@ -2,8 +2,26 @@ import { useDarkMode } from "../../context/DarkModeContext";
 import { useRecipes } from "../../context/RecipesContext";
 
 function Filter({ children, id, optionsArr }) {
-  const { dispatch } = useRecipes();
+  const {
+    dispatch,
+    recipeType,
+    recipeCuisine,
+    diet,
+    sortBy,
+    sortDir,
+    servings,
+    maxReadyTime,
+  } = useRecipes();
   const { isDarkMode } = useDarkMode();
+  const state = {
+    recipeType,
+    recipeCuisine,
+    diet,
+    sortBy,
+    sortDir,
+    servings,
+    maxReadyTime,
+  };
   const actionType = `update${id[0].toUpperCase() + id.slice(1)}`;
 
   return (
@@ -18,7 +36,8 @@ function Filter({ children, id, optionsArr }) {
         <select
           name={id}
           id={id}
-          className="dark:bg-darkMint w-32 appearance-none rounded-default bg-lightMint py-2.5 pl-4 pr-10 font-medium focus:outline-none focus:ring focus:ring-primary dark:text-paleGreen"
+          className="w-32 appearance-none rounded-default bg-lightMint py-2.5 pl-4 pr-10 font-medium focus:outline-none focus:ring focus:ring-primary dark:bg-darkMint dark:text-paleGreen"
+          value={state[id]}
           onChange={(e) => {
             dispatch({ type: actionType, payload: e.target.value });
           }}

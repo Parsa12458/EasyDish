@@ -28,3 +28,18 @@ export async function getRecipes(
     throw new Error(err.message || err);
   }
 }
+
+export async function getRecipe(id) {
+  try {
+    const res = await fetch(
+      `https://api.spoonacular.com/recipes/${id}/information?apiKey=b6caf6feb2104369afd8164623fe780b&includeNutrition=true&addTasteData=true`,
+    );
+
+    if (!res.ok) throw new Error("Something went wrong with fetching recipe!");
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+    throw new Error(err.message || err);
+  }
+}

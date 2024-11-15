@@ -95,10 +95,10 @@ function Filters() {
       <Filter id="sortDir" optionsArr={sortDirOptions}>
         Sorting Direction
       </Filter>
-      <Filter id="servings" optionsArr={servingsOptions} type="number">
+      <Filter id="servings" optionsArr={servingsOptions}>
         Servings
       </Filter>
-      <Filter id="maxReadyTime" optionsArr={maxReadyTimeOptions} type="number">
+      <Filter id="maxReadyTime" optionsArr={maxReadyTimeOptions}>
         Max Ready Time (minutes)
       </Filter>
     </div>
