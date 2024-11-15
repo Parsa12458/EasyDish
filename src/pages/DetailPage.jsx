@@ -64,7 +64,22 @@ function DetailPage() {
         <Tastes tastes={taste} />
 
         <div className="col-span-2 mx-auto ml-8 flex items-center justify-start gap-4">
-          <SaveButton />
+          <SaveButton
+            data={{
+              title,
+              image: imageSrc,
+              extendedIngredients: ingredients,
+              cookingMinutes,
+              preparationMinutes,
+              readyInMinutes,
+              servings,
+              healthScore,
+              analyzedInstructions: instructions,
+              taste,
+              nutrition,
+              id: recipeId,
+            }}
+          />
           <OutlineButton
             iconSrc="/icons/usentils-icon.svg"
             iconAlt="usentils icon"

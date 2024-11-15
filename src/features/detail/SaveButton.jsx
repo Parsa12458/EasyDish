@@ -1,8 +1,24 @@
-function SaveButton() {
+import { useLocalStorageSavedRecipes } from "../../hooks/useLocalStorageSavedRecipes";
+
+function SaveButton({ data }) {
+  const [savedRecipes, toggleSavedRecipes] = useLocalStorageSavedRecipes([]);
+
+  const isRecipeSaved = savedRecipes.some((recipe) => recipe.id === data.id);
+
   return (
-    <button className="flex items-center justify-center gap-2 rounded-default bg-oliveGreen px-8 py-2 font-medium text-snow transition-all duration-300 hover:shadow-lg">
-      <span className="mt-1">Save</span>
-      <img src="/icons/outlined-heart-icon.svg" alt="Heart icon" />
+    <button
+      className="flex items-center justify-center gap-2 rounded-default bg-oliveGreen px-8 py-2.5 font-medium text-snow transition-all duration-300 hover:shadow-lg"
+      onClick={() => toggleSavedRecipes(data)}
+    >
+      <span>Save</span>
+      <img
+        src={
+          !isRecipeSaved
+            ? "/icons/outlined-heart-icon.svg"
+            : "/icons/filled-heart-icon.svg"
+        }
+        alt="Heart icon"
+      />
     </button>
   );
 }
