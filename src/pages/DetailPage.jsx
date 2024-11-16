@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { getRecipe } from "../services/apiRecipes";
 import Error from "../ui/Error";
-import OutlineButton from "../ui/OutlineButton";
+import OutlineButton from "../features/detail/OutlineButton";
 import Ingredients from "../features/detail/Ingredients";
 import Instructions from "../features/detail/Instructions";
 import SaveButton from "../features/detail/SaveButton";
@@ -12,6 +12,7 @@ import Stats from "../features/detail/Stats";
 import Tastes from "../features/detail/Tastes";
 import Spinner from "../ui/Spinner";
 import { useEffect } from "react";
+import NutritionTable from "../features/detail/NutritionTable";
 
 function DetailPage() {
   const { recipeId } = useParams();
@@ -81,12 +82,10 @@ function DetailPage() {
             }}
           />
           <OutlineButton
-            iconSrc="/icons/usentils-icon.svg"
-            iconAlt="usentils icon"
+            iconSrc="/icons/info-icon.svg"
+            iconAlt="info icon"
+            modalContent={<NutritionTable nutrition={nutrition.nutrients} />}
           >
-            See Similar Recipes
-          </OutlineButton>
-          <OutlineButton iconSrc="/icons/info-icon.svg" iconAlt="info icon">
             See Nutrition Facts
           </OutlineButton>
         </div>
