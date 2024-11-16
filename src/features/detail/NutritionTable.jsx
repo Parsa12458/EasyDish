@@ -1,5 +1,4 @@
 function NutritionTable({ nutrition }) {
-  console.log(nutrition);
   return (
     <div className="overflow-x-visible">
       <h3 className="mb-4 text-center text-xl font-bold">Nutrition Facts</h3>

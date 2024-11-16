@@ -6,7 +6,9 @@ export default {
   theme: {
     colors: {
       primary: "#6B9080",
+      primaryDark: "#89A699",
       darkGreen: "#364840",
+      lightGreen: "#D3DED9",
       lightMint: "#EAF4F4",
       darkMint: "#202B26",
       forestGreen: "#4B655A",

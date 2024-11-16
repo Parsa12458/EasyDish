@@ -28,7 +28,7 @@ function Tastes({ tastes }) {
 
   return (
     <div>
-      <h3 className="mb-5 text-center text-3xl font-semibold text-darkGreen">
+      <h3 className="dark:text-primaryDark mb-5 text-center text-3xl font-semibold text-darkGreen">
         Tastes
       </h3>
       <ResponsiveContainer width="100%" height={220}>

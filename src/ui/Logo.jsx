@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import { useDarkMode } from "../context/DarkModeContext";
 
 function Logo() {
   const { isDarkMode } = useDarkMode();
 
   return (
-    <button>
+    <Link to="/home">
       <img
         src={
           isDarkMode
@@ -14,7 +15,7 @@ function Logo() {
         alt="Easy Dish Logo"
         className="w-44"
       />
-    </button>
+    </Link>
   );
 }
 
