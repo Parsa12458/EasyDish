@@ -2,8 +2,13 @@ import { useState, useEffect } from "react";
 
 export function useLocalStorageSavedRecipes(initialRecipe) {
   const [savedRecipes, setRecipes] = useState(() => {
-    const storedRecipes = window.localStorage.getItem("savedRecipes");
-    return storedRecipes ? JSON.parse(storedRecipes) : initialRecipe;
+    try {
+      const storedRecipes = window.localStorage.getItem("savedRecipes");
+
+      return storedRecipes ? JSON.parse(storedRecipes) : initialRecipe;
+    } catch {
+      return initialRecipe;
+    }
   });
 
   useEffect(() => {

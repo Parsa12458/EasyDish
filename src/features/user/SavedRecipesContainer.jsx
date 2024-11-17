@@ -10,7 +10,7 @@ function SavedRecipesContainer() {
       {savedRecipes?.map((data) => (
         <Card data={data} key={data.id} />
       ))}
-      {savedRecipes?.length === 0 && (
+      {(savedRecipes?.length === 0 || !savedRecipes) && (
         <Error message="No saved recipes were found! 🥱" />
       )}
     </div>
