@@ -6,6 +6,7 @@ import { DarkModeProvider } from "./context/DarkModeContext";
 import DetailPage from "./pages/DetailPage";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
+import SavedRecipesPage from "./pages/SavedRecipesPage";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,10 @@ function App() {
                 <Route path="/" element={<Navigate to="/home" replace />} />
                 <Route path="/home" element={<Homepage />} />
                 <Route path="/:recipeId" element={<DetailPage />} />
+                <Route
+                  path="/user/savedRecipes"
+                  element={<SavedRecipesPage />}
+                />
               </Route>
             </Routes>
           </BrowserRouter>

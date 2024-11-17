@@ -1,11 +1,11 @@
 import ButtonDarkMode from "./ButtonDarkMode";
 import Logo from "./Logo";
 import Searchbox from "./Searchbox";
-import AccountButton from "./AccountButton";
+import AccountButton from "../features/user/AccountButton";
 
 function Header() {
   return (
-    <header className="dark:bg-darkMint flex w-screen items-center justify-between bg-lightMint px-8 py-4">
+    <header className="flex w-screen items-center justify-between bg-lightMint px-8 py-4 dark:bg-darkMint">
       <Logo />
       <Searchbox />
 

@@ -70,9 +70,7 @@ function Cards() {
         ? Array.from({ length: 10 }, (_, i) => i).map((i) => (
             <CardSkeleton key={i} />
           ))
-        : data?.results?.map((data) => (
-            <Card data={data} isLoading={isLoading} key={data.id} />
-          ))}
+        : data?.results?.map((data) => <Card data={data} key={data.id} />)}
       {data?.results?.length === 0 && (
         <Error message="No results were found! 😵‍💫" />
       )}
