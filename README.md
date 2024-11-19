@@ -1,8 +1,31 @@
-# React + Vite
+# Easy Dish
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application provides some recipes and instructions with beautiful statistics and charts.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User can see all recipes in homepage
+- User can serach and filter recipes
+- User can save a recipe and see it in saved recipes page
+- User can see ingredients, instructions, tastes and some other stats in detail page of recipe
+- User can toggle between dark and light mode
+
+## Tech Stack
+
+- React
+- React Router
+- React query
+- Recharts
+- Tailwind
+- Daisy UI
+
+## Screenshots
+
+![Homepage screenshot light](/homepage-light.jpeg)
+![Homepage screenshot dark](/homepage-dark.jpeg)
+![Detailpage screenshot light](/detailpage-light.jpeg)
+![Detailpage screenshot dark](/detailpage-dark.jpeg)
+
+## Demo
+
+- Live Site URL: [EasyDish](https://parsa12458.github.io/EasyDish)

@@ -7,11 +7,6 @@ import inject from "@rollup/plugin-inject";
 import tailwindcss from "tailwindcss";
 
 export default defineConfig({
-  // base: "",
-  build: {
-    outDir: "docs",
-  },
-
   plugins: [
     react(),
     compression(),
