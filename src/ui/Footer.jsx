@@ -2,9 +2,9 @@ import Logo from "./Logo";
 
 function Footer() {
   return (
-    <footer className="flex w-screen items-center justify-between bg-lightMint px-8 py-5 dark:bg-darkMint">
+    <footer className="xs:px-5 flex w-screen items-center justify-between bg-lightMint px-8 py-5 dark:bg-darkMint">
       <Logo />
-      <p className="dark:text-primaryDark max-w-56 text-sm font-semibold text-primary">
+      <p className="xs:text-xs xs:max-w-44 max-w-56 text-sm font-semibold text-primary dark:text-primaryDark">
         &copy; EasyDish. All rights reserved. Created by{" "}
         <a
           href="https://github.com/Parsa12458"

@@ -79,7 +79,7 @@ const maxReadyTimeOptions = [
 
 function Filters() {
   return (
-    <div className="mt-6 flex flex-wrap items-end justify-center gap-8">
+    <div className="mt-6 flex flex-wrap items-end justify-center gap-8 px-7 sm:justify-center sm:px-0">
       <Filter id="recipeType" optionsArr={recipeTypeOptions}>
         Recipe Type
       </Filter>

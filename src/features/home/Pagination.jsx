@@ -17,7 +17,7 @@ function Pagination() {
   }
 
   return (
-    <div className="mt-16 flex flex-col items-center justify-center gap-4">
+    <div className="xs:mt-12 xs:scale-90 mt-16 flex flex-col items-center justify-center gap-4">
       <div className="join">
         <button
           className={`btn join-item border-none bg-paleGreen text-oliveGreen hover:bg-gray/50 ${isFirstPage ? "btn-disabled" : ""} dark:bg-oliveGreen dark:text-paleGreen dark:hover:bg-forestGreen`}

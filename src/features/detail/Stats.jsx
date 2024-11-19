@@ -10,7 +10,7 @@ function Stats({
   caloriesUnit,
 }) {
   return (
-    <div className="mx-auto grid grid-cols-3 gap-x-12 gap-y-5">
+    <div className="mx-auto grid grid-cols-3 gap-x-12 gap-y-5 lg:grid-cols-2">
       <Stat value={preparationMinutes ?? "-"} unit={"minutes"}>
         Preparation Time
       </Stat>

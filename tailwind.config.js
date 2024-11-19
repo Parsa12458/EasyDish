@@ -32,6 +32,13 @@ export default {
       bold: 700,
     },
 
+    screens: {
+      lg: { max: "1170px" },
+      md: { max: "850px" },
+      sm: { max: "700px" },
+      xs: { max: "450px" },
+    },
+
     extend: {
       borderRadius: {
         default: "8px",

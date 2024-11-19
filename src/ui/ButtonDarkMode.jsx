@@ -11,8 +11,9 @@ function ButtonDarkMode() {
       <img
         src={isDarkMode ? "/icons/sun-icon.svg" : "/icons/moon-icon.svg"}
         alt="Dark mode icon"
+        className="md:w-4"
       />
-      <span className="mt-1 text-sm">
+      <span className="mt-1 text-sm md:text-xs">
         {isDarkMode ? "Light Mode" : "Dark Mode"}
       </span>
     </button>

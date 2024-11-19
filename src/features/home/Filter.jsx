@@ -28,7 +28,7 @@ function Filter({ children, id, optionsArr }) {
     <div className="flex flex-col items-start gap-1.5">
       <label
         htmlFor={id}
-        className="text-sm font-semibold text-midGreen dark:text-dustyGreen"
+        className="max-w-[105px] text-sm font-semibold text-midGreen dark:text-dustyGreen"
       >
         {children}
       </label>

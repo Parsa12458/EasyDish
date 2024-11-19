@@ -65,7 +65,7 @@ function Cards() {
   if (error) return <Error />;
 
   return (
-    <div className="mt-12 flex flex-wrap justify-center gap-8 px-16">
+    <div className="mt-12 flex flex-wrap justify-center gap-8 px-16 sm:px-4">
       {isLoading
         ? Array.from({ length: 10 }, (_, i) => i).map((i) => (
             <CardSkeleton key={i} />

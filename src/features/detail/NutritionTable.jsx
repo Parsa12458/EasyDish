@@ -1,8 +1,10 @@
 function NutritionTable({ nutrition }) {
   return (
     <div className="overflow-x-visible">
-      <h3 className="mb-4 text-center text-xl font-bold">Nutrition Facts</h3>
-      <table className="table">
+      <h3 className="xs:text-lg xs:mb-0 mb-4 text-center text-xl font-bold">
+        Nutrition Facts
+      </h3>
+      <table className="xs:text-xs table">
         <thead>
           <tr>
             <th className="text-center">Row</th>

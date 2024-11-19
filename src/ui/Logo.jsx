@@ -13,7 +13,7 @@ function Logo() {
             : "/icons/light-mode-logo.svg"
         }
         alt="Easy Dish Logo"
-        className="w-44"
+        className="xs:w-32 w-44 md:w-40"
       />
     </Link>
   );

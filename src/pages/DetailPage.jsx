@@ -64,7 +64,7 @@ function DetailPage() {
         <Instructions instructions={instructions?.[0].steps} />
         <Tastes tastes={taste} />
 
-        <div className="col-span-2 mx-auto ml-8 flex items-center justify-start gap-4">
+        <div className="col-span-2 mx-auto ml-8 flex items-center justify-start gap-4 md:ml-0 md:w-full md:justify-center">
           <SaveButton
             data={{
               title,

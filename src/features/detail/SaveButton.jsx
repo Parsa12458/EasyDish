@@ -7,7 +7,7 @@ function SaveButton({ data }) {
 
   return (
     <button
-      className="flex items-center justify-center gap-2 rounded-default bg-oliveGreen px-8 py-2.5 font-medium text-snow transition-all duration-300 hover:shadow-lg dark:hover:bg-forestGreen"
+      className="flex h-[44px] items-center justify-center gap-2 rounded-default bg-oliveGreen px-8 font-medium text-snow transition-all duration-300 hover:shadow-lg sm:h-[40px] sm:px-7 sm:text-sm dark:hover:bg-forestGreen"
       onClick={() => toggleSavedRecipes(data)}
     >
       <span>Save</span>
@@ -18,7 +18,7 @@ function SaveButton({ data }) {
             : "/icons/filled-heart-icon.svg"
         }
         alt="Heart icon"
-        className="mb-1"
+        className="mb-1 sm:scale-90"
       />
     </button>
   );
