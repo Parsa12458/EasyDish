@@ -28,4 +28,4 @@ This application provides some recipes and instructions with beautiful statistic
 
 ## Demo
 
-- Live Site URL: [EasyDish](https://parsa12458.github.io/EasyDish)
+- Live Site URL: [EasyDish](https://easydish.netlify.app/)
